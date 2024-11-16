@@ -14,3 +14,6 @@ data class Teacher(
     @SerializedName("imageUrl") // Mapear el campo del JSON
     val imageUrl: String
 )
+
+
+

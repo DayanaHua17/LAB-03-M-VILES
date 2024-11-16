@@ -26,18 +26,19 @@ class TeacherAdapter(
     override fun onBindViewHolder(holder: TeacherViewHolder, position: Int) {
         val teacher = teachers[position]
 
-        // Asigna valores a los elementos del layout
+        // Asignar valores a los elementos del diseño
         holder.binding.textViewName.text = teacher.name
-        holder.binding.textViewSurname.text = teacher.lastName // Usamos lastName del modelo
+        holder.binding.textViewSurname.text = teacher.lastName
+        holder.binding.textViewPhone.text = "Teléfono: ${teacher.phone}"
+
+        // Cargar la imagen
         Picasso.get().load(teacher.imageUrl).into(holder.binding.imageView)
 
-        // Clic simple: Llamar al número del profesor
+        // Acciones de clic
         holder.itemView.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${teacher.phone}"))
             context.startActivity(intent)
         }
-
-        // Clic largo: Enviar un correo al profesor
         holder.itemView.setOnLongClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
                 data = Uri.parse("mailto:${teacher.email}")
@@ -46,6 +47,5 @@ class TeacherAdapter(
             true
         }
     }
-
     override fun getItemCount(): Int = teachers.size // Tamaño de la lista
 }
