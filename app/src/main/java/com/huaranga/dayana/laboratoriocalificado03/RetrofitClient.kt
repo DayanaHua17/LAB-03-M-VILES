@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://private-effe28-tecsup1.apiary-mock.com/list/teacher/" // URL base actualizada
+    private const val BASE_URL = "https://private-effe28-tecsup1.apiary-mock.com/list/teacher/"
 
     val apiService: ApiService by lazy {
         Retrofit.Builder()

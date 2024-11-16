@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("/list/teacher") // Cambiar endpoint al nuevo path
+    @GET("/list/teacher")
     fun getTeachers(): Call<TeacherResponse>
 }
 

@@ -17,10 +17,8 @@ class Ejercicio01 : AppCompatActivity() {
         binding = ActivityEjercicio01Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar el RecyclerView
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Consumir el endpoint
         RetrofitClient.apiService.getTeachers().enqueue(object : Callback<TeacherResponse> {
             override fun onResponse(call: Call<TeacherResponse>, response: Response<TeacherResponse>) {
                 if (response.isSuccessful) {

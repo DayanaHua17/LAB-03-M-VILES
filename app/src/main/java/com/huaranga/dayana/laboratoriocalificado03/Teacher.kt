@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 data class Teacher(
     val name: String,
 
-    @SerializedName("last_name") // Mapear el campo del JSON
-    val lastName: String, // Puedes renombrar la propiedad a "lastName"
+    @SerializedName("last_name")
+    val lastName: String,
 
     val phone: String,
     val email: String,
 
-    @SerializedName("imageUrl") // Mapear el campo del JSON
+    @SerializedName("imageUrl")
     val imageUrl: String
 )
 
